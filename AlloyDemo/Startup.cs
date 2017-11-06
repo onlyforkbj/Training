@@ -43,6 +43,8 @@ namespace AlloyDemo
                         regenerateIdentity: (manager, user) => manager.GenerateUserIdentityAsync(user))
                 }
             });
+
+            app.UseRegisterPersonas(() => HttpContext.Current.Request.IsLocal);
         }
     }
 }
